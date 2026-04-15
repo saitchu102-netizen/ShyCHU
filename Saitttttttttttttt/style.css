@@ -1,0 +1,134 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #ff3e00; /* Vivid Designer Orange */
+    --muted-color: #757575;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    padding: 60px;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.brand h1 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: var(--accent-color);
+}
+
+.role {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 50px;
+}
+
+nav ul li {
+    margin-bottom: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 10px;
+}
+
+/* Content Area Styling */
+.content {
+    padding: 60px;
+    overflow-y: auto;
+}
+
+.project-card {
+    margin-bottom: 100px;
+}
+
+.category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.project-card h2 {
+    font-size: 2rem;
+    margin: 10px 0 20px 0;
+}
+
+.project-img {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    filter: grayscale(0%);
+    transform: scale(1.01);
+}
+
+.project-card p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: var(--muted-color);
+    max-width: 500px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        position: relative;
+        height: auto;
+        padding: 40px;
+    }
+    .project-img {
+        height: 300px;
+    }
+}
